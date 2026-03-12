@@ -1,0 +1,30 @@
+{
+	"name": "Json1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_JSON_ADLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "midc",
+				"fileSystem": "processed"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"ProductName": {
+					"type": "string"
+				},
+				"ProductCode": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

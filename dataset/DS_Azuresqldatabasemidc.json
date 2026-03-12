@@ -1,0 +1,26 @@
+{
+	"name": "DS_Azuresqldatabasemidc",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_sqlserver_keyvaults",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "ProductName",
+				"type": "varchar"
+			},
+			{
+				"name": "ProductCode",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "MIDCList"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,23 @@
+{
+	"name": "DS_JSON_Incremental_Load",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_JSON_ADLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "Person_Sample_Incre_Load.json",
+					"type": "Expression"
+				},
+				"fileSystem": "processed"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
