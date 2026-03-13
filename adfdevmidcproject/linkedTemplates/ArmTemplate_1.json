@@ -478,7 +478,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "Lookup1",
+						"name": "Lookup_dynamic",
 						"type": "Lookup",
 						"dependsOn": [],
 						"policy": {
@@ -509,7 +509,7 @@
 						"type": "ForEach",
 						"dependsOn": [
 							{
-								"activity": "Lookup1",
+								"activity": "Lookup_dynamic",
 								"dependencyConditions": [
 									"Succeeded"
 								]
@@ -518,7 +518,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"items": {
-								"value": "@activity('Lookup1').output.value",
+								"value": "@activity('Lookup_dynamic').output.value",
 								"type": "Expression"
 							},
 							"activities": [
