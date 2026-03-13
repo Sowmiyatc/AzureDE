@@ -5,6 +5,75 @@
 		"factoryName": {
 			"value": "adfdevmidcproject"
 		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"LS_Dynamic_Folder_Sink_accountKey": {
+			"value": ""
+		},
+		"LS_JSON_ADLS_accountKey": {
+			"value": ""
+		},
+		"LS_Output_csv_accountKey": {
+			"value": ""
+		},
+		"LS_Parquet_Dynamic_Table_accountKey": {
+			"value": ""
+		},
+		"LS_SqlServerAdentureworks_password": {
+			"value": ""
+		},
+		"LS_input_csv_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://adlsdevmidcproject01.dfs.core.windows.net/"
+		},
+		"LS_Azure_KeyVault_properties_typeProperties_baseUrl": {
+			"value": "https://KeyVaultmidcproject.vault.azure.net/"
+		},
+		"LS_Dynamic_Folder_Sink_properties_typeProperties_url": {
+			"value": "https://adlsdevmidcproject01.dfs.core.windows.net/"
+		},
+		"LS_JSON_ADLS_properties_typeProperties_url": {
+			"value": "https://adlsdevmidcproject01.dfs.core.windows.net/"
+		},
+		"LS_Output_csv_properties_typeProperties_url": {
+			"value": "https://adlsdevmidcproject01.dfs.core.windows.net/"
+		},
+		"LS_Parquet_Dynamic_Table_properties_typeProperties_url": {
+			"value": "https://adlsdevmidcproject01.dfs.core.windows.net/"
+		},
+		"LS_SqlServerAdentureworks_properties_typeProperties_server": {
+			"value": "DESKTOP-K0FSVE2\\SQLEXPRESS"
+		},
+		"LS_SqlServerAdentureworks_properties_typeProperties_database": {
+			"value": "AdventureWorks2025"
+		},
+		"LS_SqlServerAdentureworks_properties_typeProperties_userName": {
+			"value": "DESKTOP-K0FSVE2\\Karthik"
+		},
+		"LS_input_csv_properties_typeProperties_url": {
+			"value": "https://adlsdevmidcproject01.dfs.core.windows.net/"
+		},
+		"LS_sqlserver_keyvault_properties_typeProperties_server": {
+			"value": "azuresqldatabasemidc"
+		},
+		"LS_sqlserver_keyvault_properties_typeProperties_database": {
+			"value": "midcdata"
+		},
+		"LS_sqlserver_keyvault_properties_typeProperties_userName": {
+			"value": "serverloginmidc"
+		},
+		"LS_sqlserver_keyvaults_properties_typeProperties_server": {
+			"value": "azuresqldatabasemidc.database.windows.net"
+		},
+		"LS_sqlserver_keyvaults_properties_typeProperties_database": {
+			"value": "midcdata"
+		},
+		"LS_sqlserver_keyvaults_properties_typeProperties_userName": {
+			"value": "serverloginmidc"
+		},
 		"containerUri": {
 			"value": ""
 		},

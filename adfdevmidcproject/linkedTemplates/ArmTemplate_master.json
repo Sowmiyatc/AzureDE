@@ -7,6 +7,98 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "adfdevmidcproject"
 		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"LS_Dynamic_Folder_Sink_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Dynamic_Folder_Sink'"
+		},
+		"LS_JSON_ADLS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_JSON_ADLS'"
+		},
+		"LS_Output_csv_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Output_csv'"
+		},
+		"LS_Parquet_Dynamic_Table_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Parquet_Dynamic_Table'"
+		},
+		"LS_SqlServerAdentureworks_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SqlServerAdentureworks'"
+		},
+		"LS_input_csv_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_input_csv'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevmidcproject01.dfs.core.windows.net/"
+		},
+		"LS_Azure_KeyVault_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://KeyVaultmidcproject.vault.azure.net/"
+		},
+		"LS_Dynamic_Folder_Sink_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevmidcproject01.dfs.core.windows.net/"
+		},
+		"LS_JSON_ADLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevmidcproject01.dfs.core.windows.net/"
+		},
+		"LS_Output_csv_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevmidcproject01.dfs.core.windows.net/"
+		},
+		"LS_Parquet_Dynamic_Table_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevmidcproject01.dfs.core.windows.net/"
+		},
+		"LS_SqlServerAdentureworks_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "DESKTOP-K0FSVE2\\SQLEXPRESS"
+		},
+		"LS_SqlServerAdentureworks_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorks2025"
+		},
+		"LS_SqlServerAdentureworks_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "DESKTOP-K0FSVE2\\Karthik"
+		},
+		"LS_input_csv_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevmidcproject01.dfs.core.windows.net/"
+		},
+		"LS_sqlserver_keyvault_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "azuresqldatabasemidc"
+		},
+		"LS_sqlserver_keyvault_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "midcdata"
+		},
+		"LS_sqlserver_keyvault_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "serverloginmidc"
+		},
+		"LS_sqlserver_keyvaults_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "azuresqldatabasemidc.database.windows.net"
+		},
+		"LS_sqlserver_keyvaults_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "midcdata"
+		},
+		"LS_sqlserver_keyvaults_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "serverloginmidc"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -33,10 +125,99 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"LS_Dynamic_Folder_Sink_accountKey": {
+						"value": "[parameters('LS_Dynamic_Folder_Sink_accountKey')]"
+					},
+					"LS_JSON_ADLS_accountKey": {
+						"value": "[parameters('LS_JSON_ADLS_accountKey')]"
+					},
+					"LS_Output_csv_accountKey": {
+						"value": "[parameters('LS_Output_csv_accountKey')]"
+					},
+					"LS_Parquet_Dynamic_Table_accountKey": {
+						"value": "[parameters('LS_Parquet_Dynamic_Table_accountKey')]"
+					},
+					"LS_input_csv_accountKey": {
+						"value": "[parameters('LS_input_csv_accountKey')]"
+					},
+					"LS_SqlServerAdentureworks_password": {
+						"value": "[parameters('LS_SqlServerAdentureworks_password')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"LS_Azure_KeyVault_properties_typeProperties_baseUrl": {
+						"value": "[parameters('LS_Azure_KeyVault_properties_typeProperties_baseUrl')]"
+					},
+					"LS_Dynamic_Folder_Sink_properties_typeProperties_url": {
+						"value": "[parameters('LS_Dynamic_Folder_Sink_properties_typeProperties_url')]"
+					},
+					"LS_JSON_ADLS_properties_typeProperties_url": {
+						"value": "[parameters('LS_JSON_ADLS_properties_typeProperties_url')]"
+					},
+					"LS_Output_csv_properties_typeProperties_url": {
+						"value": "[parameters('LS_Output_csv_properties_typeProperties_url')]"
+					},
+					"LS_Parquet_Dynamic_Table_properties_typeProperties_url": {
+						"value": "[parameters('LS_Parquet_Dynamic_Table_properties_typeProperties_url')]"
+					},
+					"LS_input_csv_properties_typeProperties_url": {
+						"value": "[parameters('LS_input_csv_properties_typeProperties_url')]"
+					},
+					"LS_SqlServerAdentureworks_properties_typeProperties_server": {
+						"value": "[parameters('LS_SqlServerAdentureworks_properties_typeProperties_server')]"
+					},
+					"LS_SqlServerAdentureworks_properties_typeProperties_database": {
+						"value": "[parameters('LS_SqlServerAdentureworks_properties_typeProperties_database')]"
+					},
+					"LS_SqlServerAdentureworks_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SqlServerAdentureworks_properties_typeProperties_userName')]"
+					},
+					"LS_sqlserver_keyvault_properties_typeProperties_server": {
+						"value": "[parameters('LS_sqlserver_keyvault_properties_typeProperties_server')]"
+					},
+					"LS_sqlserver_keyvault_properties_typeProperties_database": {
+						"value": "[parameters('LS_sqlserver_keyvault_properties_typeProperties_database')]"
+					},
+					"LS_sqlserver_keyvault_properties_typeProperties_userName": {
+						"value": "[parameters('LS_sqlserver_keyvault_properties_typeProperties_userName')]"
 					}
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "adfdevmidcproject_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_sqlserver_keyvaults_properties_typeProperties_server": {
+						"value": "[parameters('LS_sqlserver_keyvaults_properties_typeProperties_server')]"
+					},
+					"LS_sqlserver_keyvaults_properties_typeProperties_database": {
+						"value": "[parameters('LS_sqlserver_keyvaults_properties_typeProperties_database')]"
+					},
+					"LS_sqlserver_keyvaults_properties_typeProperties_userName": {
+						"value": "[parameters('LS_sqlserver_keyvaults_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adfdevmidcproject_ArmTemplate_0')]"
+			]
 		}
 	]
 }
