@@ -1,0 +1,25 @@
+{
+	"name": "LS_sqlserver_keyvaults",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "azuresqldatabasemidc.database.windows.net",
+			"database": "midcdata",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "serverloginmidc",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "LS_Azure_KeyVault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "secretkeymidc",
+				"secretVersion": "f859c297f34d45a6bc6d95f6071cc5e0"
+			}
+		}
+	}
+}
