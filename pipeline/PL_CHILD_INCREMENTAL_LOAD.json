@@ -23,7 +23,13 @@
 					},
 					"dataset": {
 						"referenceName": "DS_LKP_MAX_VALUE",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"schemaname": {
+								"value": "@pipeline().parameters.TableSchema",
+								"type": "Expression"
+							}
+						}
 					},
 					"firstRowOnly": false
 				}
