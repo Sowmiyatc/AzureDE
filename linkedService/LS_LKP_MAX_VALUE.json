@@ -1,0 +1,21 @@
+{
+	"name": "LS_LKP_MAX_VALUE",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "DESKTOP-K0FSVE2\\SQLEXPRESS",
+			"database": "RetailDW",
+			"encrypt": "optional",
+			"trustServerCertificate": false,
+			"authenticationType": "Windows",
+			"userName": "DESKTOP-K0FSVE2\\Karthik",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJjMDhlMjM2Yi0zMDExLTQ2NzMtYjhhNi03MzI1N2VhNjkwMzEiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntimeSqlServer",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
