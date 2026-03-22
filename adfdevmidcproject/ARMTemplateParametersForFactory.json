@@ -14,10 +14,16 @@
 		"LS_JSON_ADLS_accountKey": {
 			"value": ""
 		},
+		"LS_LKP_MAX_VALUE_password": {
+			"value": ""
+		},
 		"LS_Output_csv_accountKey": {
 			"value": ""
 		},
 		"LS_Parquet_Dynamic_Table_accountKey": {
+			"value": ""
+		},
+		"LS_SQLSERVER_RETAILDW_password": {
 			"value": ""
 		},
 		"LS_SqlServerAdentureworks_password": {
@@ -38,11 +44,29 @@
 		"LS_JSON_ADLS_properties_typeProperties_url": {
 			"value": "https://adlsdevmidcproject01.dfs.core.windows.net/"
 		},
+		"LS_LKP_MAX_VALUE_properties_typeProperties_server": {
+			"value": "DESKTOP-K0FSVE2\\SQLEXPRESS"
+		},
+		"LS_LKP_MAX_VALUE_properties_typeProperties_database": {
+			"value": "RetailDW"
+		},
+		"LS_LKP_MAX_VALUE_properties_typeProperties_userName": {
+			"value": "DESKTOP-K0FSVE2\\Karthik"
+		},
 		"LS_Output_csv_properties_typeProperties_url": {
 			"value": "https://adlsdevmidcproject01.dfs.core.windows.net/"
 		},
 		"LS_Parquet_Dynamic_Table_properties_typeProperties_url": {
 			"value": "https://adlsdevmidcproject01.dfs.core.windows.net/"
+		},
+		"LS_SQLSERVER_RETAILDW_properties_typeProperties_server": {
+			"value": "DESKTOP-K0FSVE2\\SQLEXPRESS"
+		},
+		"LS_SQLSERVER_RETAILDW_properties_typeProperties_database": {
+			"value": "RetailDW"
+		},
+		"LS_SQLSERVER_RETAILDW_properties_typeProperties_userName": {
+			"value": "DESKTOP-K0FSVE2\\Karthik"
 		},
 		"LS_SqlServerAdentureworks_properties_typeProperties_server": {
 			"value": "DESKTOP-K0FSVE2\\SQLEXPRESS"

@@ -19,6 +19,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_JSON_ADLS'"
 		},
+		"LS_LKP_MAX_VALUE_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_LKP_MAX_VALUE'"
+		},
 		"LS_Output_csv_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_Output_csv'"
@@ -26,6 +30,10 @@
 		"LS_Parquet_Dynamic_Table_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_Parquet_Dynamic_Table'"
+		},
+		"LS_SQLSERVER_RETAILDW_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQLSERVER_RETAILDW'"
 		},
 		"LS_SqlServerAdentureworks_password": {
 			"type": "secureString",
@@ -51,6 +59,18 @@
 			"type": "string",
 			"defaultValue": "https://adlsdevmidcproject01.dfs.core.windows.net/"
 		},
+		"LS_LKP_MAX_VALUE_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "DESKTOP-K0FSVE2\\SQLEXPRESS"
+		},
+		"LS_LKP_MAX_VALUE_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "RetailDW"
+		},
+		"LS_LKP_MAX_VALUE_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "DESKTOP-K0FSVE2\\Karthik"
+		},
 		"LS_Output_csv_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevmidcproject01.dfs.core.windows.net/"
@@ -58,6 +78,18 @@
 		"LS_Parquet_Dynamic_Table_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevmidcproject01.dfs.core.windows.net/"
+		},
+		"LS_SQLSERVER_RETAILDW_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "DESKTOP-K0FSVE2\\SQLEXPRESS"
+		},
+		"LS_SQLSERVER_RETAILDW_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "RetailDW"
+		},
+		"LS_SQLSERVER_RETAILDW_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "DESKTOP-K0FSVE2\\Karthik"
 		},
 		"LS_SqlServerAdentureworks_properties_typeProperties_server": {
 			"type": "string",
@@ -144,8 +176,8 @@
 					"LS_input_csv_accountKey": {
 						"value": "[parameters('LS_input_csv_accountKey')]"
 					},
-					"LS_SqlServerAdentureworks_password": {
-						"value": "[parameters('LS_SqlServerAdentureworks_password')]"
+					"LS_LKP_MAX_VALUE_password": {
+						"value": "[parameters('LS_LKP_MAX_VALUE_password')]"
 					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
@@ -168,23 +200,14 @@
 					"LS_input_csv_properties_typeProperties_url": {
 						"value": "[parameters('LS_input_csv_properties_typeProperties_url')]"
 					},
-					"LS_SqlServerAdentureworks_properties_typeProperties_server": {
-						"value": "[parameters('LS_SqlServerAdentureworks_properties_typeProperties_server')]"
+					"LS_LKP_MAX_VALUE_properties_typeProperties_server": {
+						"value": "[parameters('LS_LKP_MAX_VALUE_properties_typeProperties_server')]"
 					},
-					"LS_SqlServerAdentureworks_properties_typeProperties_database": {
-						"value": "[parameters('LS_SqlServerAdentureworks_properties_typeProperties_database')]"
+					"LS_LKP_MAX_VALUE_properties_typeProperties_database": {
+						"value": "[parameters('LS_LKP_MAX_VALUE_properties_typeProperties_database')]"
 					},
-					"LS_SqlServerAdentureworks_properties_typeProperties_userName": {
-						"value": "[parameters('LS_SqlServerAdentureworks_properties_typeProperties_userName')]"
-					},
-					"LS_sqlserver_keyvault_properties_typeProperties_server": {
-						"value": "[parameters('LS_sqlserver_keyvault_properties_typeProperties_server')]"
-					},
-					"LS_sqlserver_keyvault_properties_typeProperties_database": {
-						"value": "[parameters('LS_sqlserver_keyvault_properties_typeProperties_database')]"
-					},
-					"LS_sqlserver_keyvault_properties_typeProperties_userName": {
-						"value": "[parameters('LS_sqlserver_keyvault_properties_typeProperties_userName')]"
+					"LS_LKP_MAX_VALUE_properties_typeProperties_userName": {
+						"value": "[parameters('LS_LKP_MAX_VALUE_properties_typeProperties_userName')]"
 					}
 				}
 			},
@@ -203,6 +226,39 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"LS_SQLSERVER_RETAILDW_password": {
+						"value": "[parameters('LS_SQLSERVER_RETAILDW_password')]"
+					},
+					"LS_SqlServerAdentureworks_password": {
+						"value": "[parameters('LS_SqlServerAdentureworks_password')]"
+					},
+					"LS_SQLSERVER_RETAILDW_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQLSERVER_RETAILDW_properties_typeProperties_server')]"
+					},
+					"LS_SQLSERVER_RETAILDW_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQLSERVER_RETAILDW_properties_typeProperties_database')]"
+					},
+					"LS_SQLSERVER_RETAILDW_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQLSERVER_RETAILDW_properties_typeProperties_userName')]"
+					},
+					"LS_SqlServerAdentureworks_properties_typeProperties_server": {
+						"value": "[parameters('LS_SqlServerAdentureworks_properties_typeProperties_server')]"
+					},
+					"LS_SqlServerAdentureworks_properties_typeProperties_database": {
+						"value": "[parameters('LS_SqlServerAdentureworks_properties_typeProperties_database')]"
+					},
+					"LS_SqlServerAdentureworks_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SqlServerAdentureworks_properties_typeProperties_userName')]"
+					},
+					"LS_sqlserver_keyvault_properties_typeProperties_server": {
+						"value": "[parameters('LS_sqlserver_keyvault_properties_typeProperties_server')]"
+					},
+					"LS_sqlserver_keyvault_properties_typeProperties_database": {
+						"value": "[parameters('LS_sqlserver_keyvault_properties_typeProperties_database')]"
+					},
+					"LS_sqlserver_keyvault_properties_typeProperties_userName": {
+						"value": "[parameters('LS_sqlserver_keyvault_properties_typeProperties_userName')]"
 					},
 					"LS_sqlserver_keyvaults_properties_typeProperties_server": {
 						"value": "[parameters('LS_sqlserver_keyvaults_properties_typeProperties_server')]"

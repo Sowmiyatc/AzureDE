@@ -31,9 +31,9 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_input_csv'"
 		},
-		"LS_SqlServerAdentureworks_password": {
+		"LS_LKP_MAX_VALUE_password": {
 			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'LS_SqlServerAdentureworks'"
+			"metadata": "Secure string for 'password' of 'LS_LKP_MAX_VALUE'"
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
@@ -63,29 +63,17 @@
 			"type": "string",
 			"defaultValue": "https://adlsdevmidcproject01.dfs.core.windows.net/"
 		},
-		"LS_SqlServerAdentureworks_properties_typeProperties_server": {
+		"LS_LKP_MAX_VALUE_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "DESKTOP-K0FSVE2\\SQLEXPRESS"
 		},
-		"LS_SqlServerAdentureworks_properties_typeProperties_database": {
+		"LS_LKP_MAX_VALUE_properties_typeProperties_database": {
 			"type": "string",
-			"defaultValue": "AdventureWorks2025"
+			"defaultValue": "RetailDW"
 		},
-		"LS_SqlServerAdentureworks_properties_typeProperties_userName": {
+		"LS_LKP_MAX_VALUE_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "DESKTOP-K0FSVE2\\Karthik"
-		},
-		"LS_sqlserver_keyvault_properties_typeProperties_server": {
-			"type": "string",
-			"defaultValue": "azuresqldatabasemidc"
-		},
-		"LS_sqlserver_keyvault_properties_typeProperties_database": {
-			"type": "string",
-			"defaultValue": "midcdata"
-		},
-		"LS_sqlserver_keyvault_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "serverloginmidc"
 		}
 	},
 	"variables": {
@@ -453,6 +441,43 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/DS_SQL_PARQUET_ADLS')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_Parquet_Dynamic_Table",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"Table_Name": {
+						"type": "string"
+					}
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "@concat(dataset().Table_Name,'_',formatDateTime(utcNow(),'yyyyMMddHHmmss'),'.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@concat(dataset().Table_Name,'/',formatDateTime(utcNow(),'yyyy/MM/dd'))",
+							"type": "Expression"
+						},
+						"fileSystem": "retaildw"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/LS_Parquet_Dynamic_Table')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/DS_input_csv')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -595,22 +620,22 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/LS_SqlServerAdentureworks')]",
+			"name": "[concat(parameters('factoryName'), '/LS_LKP_MAX_VALUE')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
 				"type": "SqlServer",
 				"typeProperties": {
-					"server": "[parameters('LS_SqlServerAdentureworks_properties_typeProperties_server')]",
-					"database": "[parameters('LS_SqlServerAdentureworks_properties_typeProperties_database')]",
+					"server": "[parameters('LS_LKP_MAX_VALUE_properties_typeProperties_server')]",
+					"database": "[parameters('LS_LKP_MAX_VALUE_properties_typeProperties_database')]",
 					"encrypt": "optional",
 					"trustServerCertificate": false,
 					"authenticationType": "Windows",
-					"userName": "[parameters('LS_SqlServerAdentureworks_properties_typeProperties_userName')]",
+					"userName": "[parameters('LS_LKP_MAX_VALUE_properties_typeProperties_userName')]",
 					"password": {
 						"type": "SecureString",
-						"value": "[parameters('LS_SqlServerAdentureworks_password')]"
+						"value": "[parameters('LS_LKP_MAX_VALUE_password')]"
 					}
 				},
 				"connectVia": {
@@ -620,35 +645,6 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntimeSqlServer')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_sqlserver_keyvault')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "SqlServer",
-				"typeProperties": {
-					"server": "[parameters('LS_sqlserver_keyvault_properties_typeProperties_server')]",
-					"database": "[parameters('LS_sqlserver_keyvault_properties_typeProperties_database')]",
-					"encrypt": "mandatory",
-					"trustServerCertificate": false,
-					"authenticationType": "SQL",
-					"userName": "[parameters('LS_sqlserver_keyvault_properties_typeProperties_userName')]",
-					"password": {
-						"type": "AzureKeyVaultSecret",
-						"store": {
-							"referenceName": "LS_Azure_KeyVault",
-							"type": "LinkedServiceReference"
-						},
-						"secretName": "secretkeymidc",
-						"secretVersion": "bd377914d7e04a56a6b3d25b2c8c3fa5"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_Azure_KeyVault')]"
 			]
 		}
 	]
